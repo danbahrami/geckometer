@@ -66,5 +66,18 @@ describe("Geckometer component", () => {
         expect(euroWrapper.find(".Geckometer__target").text()).to.contain("€");
         expect(dollarWrapper.find(".Geckometer__target").text()).to.contain("$");
         expect(swissFrancWrapper.find(".Geckometer__target").text()).to.contain("CHF");
-    })
+    });
+
+    /*
+     * It should handle loading state
+     */
+    it("Should handle loading state", () => {
+        const wrapper = shallow(
+            <Geckometer loading={true} />
+        );
+
+        expect(wrapper.some(".Geckometer__center")).to.equal(false);
+        expect(wrapper.some(".Geckometer__target")).to.equal(false);
+        expect(wrapper.find(".Geckometer__loadingMessage").text()).to.equal("Fetching data...");
+    });
 });
