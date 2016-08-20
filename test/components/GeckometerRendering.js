@@ -23,7 +23,7 @@ describe("Geckometer component", () => {
             <Geckometer min={100} max={200} value={156} />
         );
 
-        expect(wrapper.find(".Geckometer__percentage").text()).to.equal("56");
+        expect(wrapper.find(".Geckometer__percentage").text()).to.equal("56%");
     });
     
     /*
