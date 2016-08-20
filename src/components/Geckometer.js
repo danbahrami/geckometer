@@ -3,8 +3,8 @@ import { getPercentage, formatCurrencyString } from "../utils";
 import Doughnut from "./Doughnut";
 import "./Geckometer.css";
 
-const Geckometer = ({max, min, value, currencyCode}) => {
-    const percent = getPercentage(min, max, value);
+const Geckometer = ({ max, min, value, currencyCode, loading }) => {
+    const percent = !loading ? getPercentage(min, max, value) : 0;
 
     return (
         <div className="Geckometer">
@@ -12,26 +12,37 @@ const Geckometer = ({max, min, value, currencyCode}) => {
                 className="Geckometer__doughnut"
                 percent={percent}
             />
-            <div className="Geckometer__center">
-                <span className="Geckometer__value">
-                    {formatCurrencyString(value, currencyCode)}
-                </span>
-                <span className="Geckometer__percentage">
-                    {percent.toString()}%
-                </span>
-            </div>
-            <div className="Geckometer__target">
-                Your target is {formatCurrencyString(max, currencyCode)}
-            </div>
+
+            {!loading ? (
+                <div className="Geckometer__center">
+                    <span className="Geckometer__value">
+                        {formatCurrencyString(value, currencyCode)}
+                    </span>
+                    <span className="Geckometer__percentage">
+                        {percent.toString()}%
+                    </span>
+                </div>
+            ) : null}
+
+            {loading ? (
+                <div className="Geckometer__loadingMessage">
+                    Fetching data...
+                </div>
+            ) : (
+                <div className="Geckometer__target">
+                    Your target is {formatCurrencyString(max, currencyCode)}
+                </div>
+            )}
         </div>
     );
 };
 
 Geckometer.propTypes = {
     currencyCode : T.string,
-    max          : T.number.isRequired,
-    min          : T.number.isRequired,
-    value        : T.number.isRequired
+    loading      : T.bool,
+    max          : T.number,
+    min          : T.number,
+    value        : T.number
 };
 
 export default Geckometer;
