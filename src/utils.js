@@ -15,5 +15,9 @@
  * @returns {number} The percentage as an integer between including 0 and 100
  */
 export const getPercentage = (min, max, value) => {
-    
+    //Get the total difference between min and max
+    const totalDifference = max - min;
+
+    //Return the value percentage
+    return Math.round(((value - min) / totalDifference) * 100);
 };
