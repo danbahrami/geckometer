@@ -1,19 +1,19 @@
 .Geckometer {
-    margin-top: 80px;
     position: relative;
-    width: 200px;
     margin: 0 auto;
+    margin-top: 80px;
+    width: 200px;
 }
 
 .Geckometer__center {
-    text-align: center;
     position: absolute;
-    width: 200px;
-    height: 200px;
     top: 0;
     left: 0;
     display: flex;
     flex-direction: column;
+    width: 200px;
+    height: 200px;
+    text-align: center;
     justify-content: center;
 }
 
@@ -27,15 +27,15 @@
 .Geckometer__percentage {
     display: block;
     color: #8DC63F;
-    font-size: 1.8rem;
     font-weight: 200;
+    font-size: 1.8rem;
 }
 
 .Geckometer__target {
-    display:block;
-    text-align: center;
+    display: block;
+    margin-top: 20px;
     color: #FFFFFF;
-    font-size: 1.8rem;
+    text-align: center;
     font-weight: 200;
-    margin-top:20px;
+    font-size: 1.8rem;
 }
