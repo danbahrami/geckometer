@@ -1,5 +1,5 @@
 import React, { PropTypes as T } from "react";
-import ".Doughnut.css";
+import "./Doughnut.css";
 
 /**
  * Doughnut is a yummy pie chart but with the center cut out.
