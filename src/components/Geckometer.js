@@ -1,9 +1,9 @@
 import React, { PropTypes as T } from "react";
-import { getPercentage } from "../utils";
+import { getPercentage, formatCurrencyString } from "../utils";
 import Doughnut from "./Doughnut";
 import "./Geckometer.css";
 
-const Geckometer = ({ max, min, value }) => {
+const Geckometer = ({max, min, value, currencyCode}) => {
     const percent = getPercentage(min, max, value);
 
     return (
@@ -14,23 +14,24 @@ const Geckometer = ({ max, min, value }) => {
             />
             <div className="Geckometer__center">
                 <span className="Geckometer__value">
-                    {value.toString()}
+                    {formatCurrencyString(value, currencyCode)}
                 </span>
                 <span className="Geckometer__percentage">
                     {percent.toString()}%
                 </span>
             </div>
             <div className="Geckometer__target">
-                Your target is {max.toString()}
+                Your target is {formatCurrencyString(max, currencyCode)}
             </div>
         </div>
     );
 };
 
 Geckometer.propTypes = {
-    max   : T.number.isRequired,
-    min   : T.number.isRequired,
-    value : T.number.isRequired
+    currencyCode : T.string,
+    max          : T.number.isRequired,
+    min          : T.number.isRequired,
+    value        : T.number.isRequired
 };
 
 export default Geckometer;
