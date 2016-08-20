@@ -1,0 +1,18 @@
+.Doughnut {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: #464646;
+    transform: rotate(-90deg);
+}
+
+.Doughnut__ring {
+    transition: stroke-dasharray .3s ease;
+    fill: #464646;
+    stroke: #8DC63F;
+    stroke-width: 100;
+}
+
+.Doughnut__center {
+    fill: #2A2A2A
+}
