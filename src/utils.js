@@ -21,3 +21,26 @@ export const getPercentage = (min, max, value) => {
     //Return the value percentage
     return Math.round(((value - min) / totalDifference) * 100);
 };
+
+/**
+ * formatCurrencyString accepts a value and a currency 
+ * code and returns a formatted string containing 
+ * the value prefixed by the currency symbol.
+ * 
+ * @param {number} value - the value to format
+ * @param {string} currencyCode - The 3 character currency code (e.g. "USD")
+ */
+export const formatCurrencyString = (value, currencyCode) => {
+    const symbolMap = {
+        "GBP" : "£",
+        "USD" : "$",
+        "CHF" : "CHF",
+        "EUR" : "€"
+    };
+
+    if(Object.keys(symbolMap).indexOf(currencyCode) !== -1) {
+        return symbolMap[currencyCode] + value.toString();
+    }
+
+    return value.toString()
+};
