@@ -25,7 +25,7 @@ describe("getPercentage util", () => {
      * It should round to the nearest integer
      */
     it("rounds to the nearest integer", () => {
-        const percent = getPercentage(1, 3, 1);
+        const percent = getPercentage(0, 3, 1);
 
         expect(percent).to.equal(33);
     });
