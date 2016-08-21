@@ -80,4 +80,20 @@ describe("Geckometer component", () => {
         expect(wrapper.some(".Geckometer__target")).to.equal(false);
         expect(wrapper.find(".Geckometer__loadingMessage").text()).to.equal("Fetching data...");
     });
+
+    /*
+     * It should add a css modifier to the value when the text is long
+     */
+    it("adds \"--smallText\" css modifier to the value when the text is longer than 4 characters", () => {
+        const wrapper = shallow(
+            <Geckometer min={0} max={999} value={999} />
+        );
+
+        const largeValueWrapper = shallow(
+            <Geckometer min={0} max={999} value={999} currencyCode="CHF" />
+        );
+
+        expect(wrapper.find(".Geckometer__value").hasClass("--smallText")).to.equal(false);
+        expect(largeValueWrapper.find(".Geckometer__value").hasClass("--smallText")).to.equal(true);
+    });
 });
