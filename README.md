@@ -4,6 +4,21 @@ Geckometer is a React component with a simple, flat UI for visualising a value w
 
 The example React app provided was initialised using [create-react-app](https://github.com/facebookincubator/create-react-app) for speed of setup and state is handled with [Redux](https://github.com/reactjs/redux). Tests are written with [Mocha](https://mochajs.org/), [Chai](http://chaijs.com/) and [Enzyme](https://github.com/airbnb/enzyme).
 
+## Installation
+
+You will need to have create-react-app globally installed on your machine. If you don't already run...
+```
+npm install -g create-react-app
+```
+
+Then from the project root directory run...
+
+```
+npm install
+```
+
+That's it! you're all set up.
+
 ## Scripts
 
 To create a dev build at [http://localhost:3000](http://localhost:3000)
