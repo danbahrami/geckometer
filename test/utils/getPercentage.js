@@ -30,4 +30,25 @@ describe("getPercentage util", () => {
         expect(percent).to.equal(33);
     });
 
+    /*
+     * It should always return between 0 and 100
+     */
+    it("always returns between 0 and 100", () => {
+        const lowPercent = getPercentage(0, 100, -20);
+        const highPercent = getPercentage(0, 100, 200);
+
+        expect(lowPercent).to.equal(0);
+        expect(highPercent).to.equal(100);
+    });
+
+    /*
+     * It should use max as the source of truth when min and max conflict
+     */
+    it("uses max as the source of truth when min and max conflict", () => {
+        const lowPercent = getPercentage(200, 100, 99);
+        const highPercent = getPercentage(200, 100, 101);
+
+        expect(lowPercent).to.equal(0);
+        expect(highPercent).to.equal(100);
+    });
 });
