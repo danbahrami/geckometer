@@ -1,0 +1,36 @@
+.App {
+    padding: 0 20px;
+}
+
+.App__errorMessage {
+    width: 100%;
+    font-size: 2rem;
+    font-weight: 200;
+    text-align: center;
+    display: block;
+    color: #FFFFFF;
+}
+
+.App__refreshButton {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    margin-left: -100px;
+    padding: 6px 16px 8px;
+    width: 200px;
+    outline: none;
+    border: 2px solid #8DC63F;
+    border-radius: 999px;
+    background: transparent;
+    box-shadow: none;
+    color: #8DC63F;
+    font-weight: 200;
+    font-size: 2rem;
+    cursor: pointer;
+    appearance: none;
+}
+
+.App__refreshButton:hover {
+    background: #8DC63F;
+    color: #2A2A2A;
+}
