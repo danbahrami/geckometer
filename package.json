@@ -26,7 +26,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "./node_modules/.bin/mocha --recursive --compilers js:babel-core/register --require test/css-null-compiler.js"
+    "test": "./node_modules/.bin/mocha --recursive --compilers js:babel-core/register --require test/nullLoader.js"
   },
   "eslintConfig": {
     "extends": "./node_modules/react-scripts/config/eslint.js"
