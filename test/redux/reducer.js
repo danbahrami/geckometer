@@ -23,12 +23,27 @@ describe("Redux Reducer", () => {
             ...state,
             loading : false
         }, actions.getDataStart());
-        
+
         const endState = reducer(startState, actions.getDataSuccess(mock.data));
         const failureState = reducer(startState, actions.getDataFailure(mock.error));
 
         expect(startState.loading).to.equal(true);
         expect(endState.loading).to.equal(false);
         expect(failureState.loading).to.equal(false);
+    });
+
+    /*
+     * It should clear and set data state on getDate: start and success
+     */
+    it("clears and set data state on getDate: start and success", () => {
+        const startState = reducer({
+            ...state,
+            data : mock.data
+        }, actions.getDataStart());
+
+        const endState = reducer(startState, actions.getDataSuccess(mock.data));
+
+        expect(startState.data).to.be.null;
+        expect(endState.data).to.deep.equal(mock.data);
     });
 });
