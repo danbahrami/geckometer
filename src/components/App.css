@@ -3,12 +3,12 @@
 }
 
 .App__errorMessage {
-    width: 100%;
-    font-size: 2rem;
-    font-weight: 200;
-    text-align: center;
     display: block;
+    width: 100%;
     color: #FFFFFF;
+    text-align: center;
+    font-weight: 200;
+    font-size: 2rem;
 }
 
 .App__refreshButton {
