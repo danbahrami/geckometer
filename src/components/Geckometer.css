@@ -2,12 +2,14 @@
     position: relative;
     margin: 0 auto;
     width: 200px;
+    padding: 20px;
+    background: #2A2A2A;
 }
 
 .Geckometer__center {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 20px;
+    left: 20px;
     display: flex;
     flex-direction: column;
     width: 200px;
