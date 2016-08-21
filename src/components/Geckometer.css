@@ -31,7 +31,8 @@
     font-size: 1.8rem;
 }
 
-.Geckometer__target {
+.Geckometer__target,
+.Geckometer__loadingMessage {
     display: block;
     margin-top: 20px;
     color: #FFFFFF;
