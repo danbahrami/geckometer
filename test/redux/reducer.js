@@ -46,4 +46,20 @@ describe("Redux Reducer", () => {
         expect(startState.data).to.be.null;
         expect(endState.data).to.deep.equal(mock.data);
     });
+
+
+    /*
+     * It should set and clear and set error state on getData: start and failure
+     */
+    it("clears and sets error state on getDate: start and failure", () => {
+        const startState = reducer({
+            ...state,
+            error : mock.error
+        }, actions.getDataStart());
+
+        const failureState = reducer(startState, actions.getDataFailure(mock.error));
+
+        expect(startState.error).to.be.null;
+        expect(failureState.error).to.equal(mock.error);
+    });
 });
