@@ -5,6 +5,9 @@ import { Provider } from "react-redux";
 import thunkMiddleware from "redux-thunk";
 import reducer from "./redux/reducer";
 import state from "./redux/state";
+import App from './components/App';
+import "normalize.css";
+import './index.css';
 
 const store = createStore(
     reducer,
@@ -14,10 +17,6 @@ const store = createStore(
         window.devToolsExtension ? window.devToolsExtension() : f => f
     )
 );
-
-import App from './components/App';
-import "normalize.css";
-import './index.css';
 
 ReactDOM.render(
     <Provider store={store}>

@@ -4,6 +4,14 @@ import Geckometer from "./Geckometer";
 import { getData } from "../redux/actions";
 import "./App.css";
 
+/**
+ * App
+ *
+ * This is an example React app to demonstrate how a Geckoboard component
+ * could be used. On page load we'll populate the app with some data,
+ * then demonstrate how the component responds do data updates by
+ * adding a refresh button that fetches new data when clicked.
+ */
 class App extends Component {
     componentDidMount() {
         this.getData();

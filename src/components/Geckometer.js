@@ -3,8 +3,18 @@ import { getPercentage, formatCurrencyString } from "../utils";
 import Doughnut from "./Doughnut";
 import "./Geckometer.css";
 
+/**
+ * Geckometer
+ *
+ * A chart that visualises a value within a given range. It displays
+ * the value, the target value and the percentage ratio between 
+ * the two. All emphasized with a yummy Doughnut graph.
+ */
 const Geckometer = ({ max, min, value, currencyCode, loading }) => {
+    //Get the percentage ratio between the value and the data range
     const percent = !loading ? getPercentage(min, max, value) : 0;
+
+    //Format the value, we need this now to evaluate the string length
     const formattedValue = !loading ? formatCurrencyString(value, currencyCode) : null;
 
     return (

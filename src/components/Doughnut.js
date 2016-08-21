@@ -2,7 +2,9 @@ import React, { PropTypes as T } from "react";
 import "./Doughnut.css";
 
 /**
- * Doughnut is a yummy pie chart but with the center cut out.
+ * Doughnut
+ *
+ * A yummy pie chart but with the center cut out.
  *
  * Credit to Robin Rendle for providing the stroke-dash-array
  * based css hack that allows this to work.

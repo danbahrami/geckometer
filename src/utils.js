@@ -46,9 +46,11 @@ export const formatCurrencyString = (value, currencyCode) => {
         "EUR" : "€"
     };
 
+    //If currencyCode is a supported currency prefix the value with the currency symbol
     if(Object.keys(symbolMap).indexOf(currencyCode) !== -1) {
         return symbolMap[currencyCode] + value.toString();
     }
 
-    return value.toString()
+    //Else return the value as a string
+    return value.toString();
 };
