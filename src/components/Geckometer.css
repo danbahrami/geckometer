@@ -24,6 +24,10 @@
     line-height: 1;
 }
 
+.Geckometer__value.--smallText {
+    font-size : 4rem;
+}
+
 .Geckometer__percentage {
     display: block;
     color: #8DC63F;

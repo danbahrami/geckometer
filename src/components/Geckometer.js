@@ -5,6 +5,7 @@ import "./Geckometer.css";
 
 const Geckometer = ({ max, min, value, currencyCode, loading }) => {
     const percent = !loading ? getPercentage(min, max, value) : 0;
+    const formattedValue = !loading ? formatCurrencyString(value, currencyCode) : null;
 
     return (
         <div className="Geckometer">
@@ -15,8 +16,11 @@ const Geckometer = ({ max, min, value, currencyCode, loading }) => {
 
             {!loading ? (
                 <div className="Geckometer__center">
-                    <span className="Geckometer__value">
-                        {formatCurrencyString(value, currencyCode)}
+                    <span className={
+                        "Geckometer__value"
+                        + (formattedValue.length > 4 ? " --smallText" : "")
+                    }>
+                        {formattedValue}
                     </span>
                     <span className="Geckometer__percentage">
                         {percent.toString()}%
