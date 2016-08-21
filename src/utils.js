@@ -18,6 +18,14 @@ export const getPercentage = (min, max, value) => {
     //Get the total difference between min and max
     const totalDifference = max - min;
 
+    //If min is higher than max then use max as the source of truth
+    if(totalDifference <= 0) {
+        return value < max ? 0 : 100;
+    }
+
+    //Coerce value to sit between max and min values
+    value = Math.max(Math.min(max, value), min);
+
     //Return the value percentage
     return Math.round(((value - min) / totalDifference) * 100);
 };
