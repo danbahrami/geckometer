@@ -19,10 +19,7 @@ const Geckometer = ({ max, min, value, currencyCode, loading }) => {
 
     return (
         <div className="Geckometer">
-            <Doughnut
-                className="Geckometer__doughnut"
-                percent={percent}
-            />
+            <Doughnut percent={percent}/>
 
             {!loading ? (
                 <div className="Geckometer__center">

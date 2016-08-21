@@ -11,7 +11,7 @@ import "./Doughnut.css";
  *
  * https://css-tricks.com/how-to-make-charts-with-svg/#article-header-id-7
  */
-const Doughnut = ({ className, percent }) => {
+const Doughnut = ({ percent }) => {
     //The max dash-array is a function of the doughnuts radius
     const maxDashArray = 316;
 
@@ -20,7 +20,7 @@ const Doughnut = ({ className, percent }) => {
 
     return (
         <svg
-            className={`${className} Doughnut`}
+            className="Doughnut"
             width={200}
             height={200}
         >
@@ -35,7 +35,6 @@ const Doughnut = ({ className, percent }) => {
 };
 
 Doughnut.propTypes = {
-    className : T.string,
     percent   : T.number.isRequired
 };
 
