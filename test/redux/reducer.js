@@ -33,9 +33,9 @@ describe("Redux Reducer", () => {
     });
 
     /*
-     * It should clear and set data state on getDate: start and success
+     * It should clear and set data state on getData: start and success
      */
-    it("clears and set data state on getDate: start and success", () => {
+    it("clears and set data state on getData: start and success", () => {
         const startState = reducer({
             ...state,
             data : mock.data
