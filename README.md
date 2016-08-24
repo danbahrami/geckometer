@@ -61,4 +61,4 @@ npm run test
 * Although I like the UI of the Geckometer component, I can see that not explicitly displaying the min value is a cause of some confusion. One solution would be instead of having a doughnut chart covering 360°, leave a gap at the top in which the min value will sit.
 * I am rather crudely handling the edge case of the min value being higher than the max value. My solution is to simply use the max value as the source of truth in this case, which leads to some confusion in the UI. It may be better to add a custom propType to Geckometer that would throw an error if the min prop is higher than the max prop.
 * I have only added tests for the synchronous reducer logic. I made the call that network requests were handled by the surrounding app so were out of scope, but tests would be good to have here.
-* With more time, and in the context of a larger project I would move to SCSS for styles.
+* With more time, and in the context of a larger project I would move to SCSS, or a JS based styling framework to allow for more modular styles. Currently the styling of the Geckometer component is relatively reliant on the styling of it's context.
